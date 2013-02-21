@@ -1,0 +1,37 @@
+//= require_self
+
+@mixin rounded-corners($radius) {
+  boder-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@import "bootstrap";
+@import "font-awesome";
+@import "static_pages.css.scss";
+@import "words.css.scss";
+
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+  hr {
+    margin: 30px 0;
+  }
+}
+
+.jumbotron {
+  background-image: image-url("top.png");
+  margin: 60px 0;
+  padding: 50px;
+  text-align: center;
+  .inside-jumbotron {
+    background-image: image-url("homebg.png");
+    padding: 20px;
+    @include rounded-corners(5px);
+  }
+}

@@ -2,13 +2,41 @@
 <html>
 <head>
   <title>You Go Boy!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id="<%= params[:controller].parameterize %>_controller">
+  <div class="container-narrow">
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li>
+        <a href="/"><i class="icon-home"></i> Home</a>
+        </li>
+        <li>
+        <a href="/help"><i class="icon-question-sign"></i> Help</a>
+        </li>
+        <li>
+        <% if user_signed_in? %>
+          <%= link_to('<i class="icon-signout"></i> Logout'.html_safe, destroy_user_session_path, method: :delete) %>
+        <% else %>
+          <%= link_to('<i class="icon-signin"></i> Login'.html_safe, new_user_session_path) %>
+        <% end %>
+        </li>
+      </ul>
+      <h3 class="muted">You Go Boy!</h3>
+    </div>
+    <hr>
+    <div class="jumbotron">
+      <div class="inside-jumbotron">
+        <%= yield %>
+      </div>
+    </div>
+    <hr>
+    <div class="footer">
+      <p>You Go Boy Project 2013</p>
+    </div>
+  </div><!-- /container-narrow -->
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
