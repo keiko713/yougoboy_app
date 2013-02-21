@@ -1,4 +1,9 @@
 YougoboyApp::Application.routes.draw do
+  resources :words
+
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,31 @@
+<h1>Listing words</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Group</th>
+    <th>Image</th>
+    <th>Sound</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @words.each do |word| %>
+  <tr>
+    <td><%= word.name %></td>
+    <td><%= word.level %></td>
+    <td><%= word.group %></td>
+    <td><%= image_tag("words/#{word.name.downcase}.png", alt: word.name, width: 50, height: 50) %></td>
+    <td><audio src="http://tts-api.com/tts.mp3?q=<%= word.name %>" controls></audio></td>
+    <td><%= link_to 'Show', word %></td>
+    <td><%= link_to 'Edit', edit_word_path(word) %></td>
+    <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Word', new_word_path %>
