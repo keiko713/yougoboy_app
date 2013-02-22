@@ -1,18 +1,15 @@
-<h2>Sign up</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <h2>新規アカウント作成</h2>
+  <hr>
+  <% if notification = f.error_notification %>
+    <%= notification %>
+  <% end %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= f.input :email, input_html: { autofocus: true } %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div class="form-actions">
+    <%= f.submit "アカウント作成", class: "btn btn-large btn-success" %>
+  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

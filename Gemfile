@@ -32,3 +32,4 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.2.1'
+gem 'simple_form'

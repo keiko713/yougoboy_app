@@ -16,13 +16,18 @@
         <li>
         <a href="/help"><i class="icon-question-sign"></i> Help</a>
         </li>
-        <li>
         <% if user_signed_in? %>
-          <%= link_to('<i class="icon-signout"></i> Logout'.html_safe, destroy_user_session_path, method: :delete) %>
-        <% else %>
-          <%= link_to('<i class="icon-signin"></i> Login'.html_safe, new_user_session_path) %>
-        <% end %>
+        <li>
+          <%= link_to('<i class="icon-signout"></i> ログアウト'.html_safe, destroy_user_session_path, method: :delete) %>
         </li>
+        <% else %>
+        <li>
+          <%= link_to('<i class="icon-signin"></i> ログイン'.html_safe, new_user_session_path) %>
+        </li>
+        <li>
+          <%= link_to('<i class="icon-plus"></i> アカウント作成'.html_safe, new_user_registration_path) %>
+        </li>
+        <% end %>
       </ul>
       <h3 class="muted">You Go Boy!</h3>
     </div>
