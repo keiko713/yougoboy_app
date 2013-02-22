@@ -1,0 +1,10 @@
+<%= simple_form_for(@kid) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name, input_html: { placeholder: "なまえ（ローマ字）" } %>
+  <%= f.input :charactor_img, input_html: { placeholder: "画像のURL" } %>
+
+  <div class="form-actions">
+    <%= f.submit "Save", class: "btn btn-large btn-success" %>
+  </div>
+<% end %>

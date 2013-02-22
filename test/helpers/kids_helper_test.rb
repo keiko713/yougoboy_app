@@ -1,4 +1,4 @@
 require "minitest_helper"
 
-describe WordsHelper do
+describe KidsHelper do
 end

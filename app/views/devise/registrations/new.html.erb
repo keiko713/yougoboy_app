@@ -1,13 +1,15 @@
+<%= link_to root_path do %>
+  <%= image_tag('back_btn.png', class: "pull-left back-btn") %>
+<% end %>
+<h2>新規アカウント作成</h2>
+<hr>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <h2>新規アカウント作成</h2>
-  <hr>
-  <% if notification = f.error_notification %>
-    <%= notification %>
-  <% end %>
+  <%= f.error_notification %>
 
-  <%= f.input :email, input_html: { autofocus: true } %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
+  <%= f.input :email, input_html: { autofocus: true, placeholder: "メールアドレス" } %>
+  <%= f.input :familyname, input_html: { placeholder: "家族の名字をローマ字で" } %>
+  <%= f.input :password, input_html: { placeholder: "パスワード" } %>
+  <%= f.input :password_confirmation, input_html: { placeholder: "同じパスワードをもう一度" } %>
 
   <div class="form-actions">
     <%= f.submit "アカウント作成", class: "btn btn-large btn-success" %>

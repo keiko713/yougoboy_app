@@ -1,12 +1,5 @@
 #devise-sessions_controller {
   .inside-jumbotron {
-    form {
-      margin-bottom: 0;
-    }
-    .form-actions {
-      margin-bottom: 0;
-      background-color: transparent;
-    }
     label.checkbox input[type="checkbox"] {
       float: none;
     }
@@ -14,13 +7,6 @@
 }
 #devise-registrations_controller {
   .inside-jumbotron {
-    form {
-      margin-bottom: 0;
-    }
-    .form-actions {
-      margin-bottom: 0;
-      background-color: transparent;
-    }
     // make help-inline to help-block
     .help-inline {
       display: block;

@@ -4,5 +4,14 @@ FactoryGirl.define do
     group 'Fruits'
     level 1
   end
-end
 
+  factory :user do
+    familyname 'Oda'
+    email 'example@mail.com'
+    password 'password'
+  end
+
+  factory :kid do
+    name 'Keiko'
+  end
+end

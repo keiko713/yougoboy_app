@@ -19,3 +19,7 @@ MiniTest::Rails.override_testunit!
 class MiniTest::Spec
   include FactoryGirl::Syntax::Methods
 end
+
+class MiniTest::Rails::ActionController::TestCase
+  include Devise::TestHelpers
+end

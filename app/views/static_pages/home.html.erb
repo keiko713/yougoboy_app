@@ -1,3 +1,22 @@
-<h1>You Go Boy!</h1>
-<p class="lead">Let's play together! おうちの<ruby><rb>人</rb><rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>にログインしてもらってね</p>
-<%= link_to('ログイン', new_user_session_path, class: "btn btn-large btn-success") %>
+<% if user_signed_in? %>
+  <h2>Welcome <%= current_user.familyname %>  Family</h2>
+  <p class="lead">Choose a player! どの<ruby><rb>人</rb><rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>であそぶ？</p>
+  <div class="row row-player">
+    <% current_user.kids.each do |kid| %>
+    <div class="span-player">
+      <%= image_tag("#{kid.charactor_img}", class: "img-circle") %>
+      <h4><%= kid.name %></h4>
+    </div>
+    <% end %>
+    <div class="span-player">
+      <%= link_to new_kid_path do %>
+        <%= image_tag("add_player.png", class: "img-circle add-player") %>
+      <% end %>
+      <h4>Add new player</h4>
+    </div>
+  </div>
+<% else %>
+  <h1>You Go Boy!</h1>
+  <p class="lead">Let's play together! おうちの<ruby><rb>人</rb><rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>にログインしてもらってね</p>
+  <%= link_to('<i class="icon-signin"></i> ログイン'.html_safe, new_user_session_path, class: "btn btn-large btn-success") %>
+<% end %>
