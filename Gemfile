@@ -13,6 +13,7 @@ group :development do
   gem 'rb-fsevent', require: false
   gem 'rb-fchange', require: false
   gem 'factory_girl'
+  gem 'capistrano'
 end
 
 group :test do
