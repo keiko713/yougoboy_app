@@ -1,18 +1,27 @@
 <% if user_signed_in? %>
-  <h2>Welcome <%= current_user.familyname %>  Family</h2>
-  <p class="lead">Choose a player! どの<ruby><rb>人</rb><rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>であそぶ？</p>
-  <div class="row row-player">
-    <% current_user.kids.each do |kid| %>
-    <div class="span-player">
-      <%= image_tag("#{kid.charactor_img}", class: "img-circle") %>
-      <h4><%= kid.name %></h4>
-    </div>
-    <% end %>
-    <div class="span-player">
-      <%= link_to new_kid_path do %>
-        <%= image_tag("add_player.png", class: "img-circle add-player") %>
+  <div class="welcome">
+    <h2>Welcome <%= current_user.familyname %>  Family</h2>
+    <p class="lead">Choose a player! どの<ruby><rb>人</rb><rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>であそぶ？</p>
+    <div class="row row-player">
+      <% current_user.kids.each do |kid| %>
+      <div class="span-player">
+        <%= image_tag("#{kid.charactor_img}", alt: "#{kid.name}", class: "img-circle player-img", data: { kid_id: kid.id }) %>
+        <h4><%= kid.name %></h4>
+      </div>
       <% end %>
-      <h4>Add new player</h4>
+      <div class="span-player">
+        <%= link_to new_kid_path do %>
+          <%= image_tag("add_player.png", class: "img-circle") %>
+        <% end %>
+        <h4>Add new player</h4>
+      </div>
+    </div>
+  </div>
+  <div class="game" style="display: none;">
+  </div>
+  <div id="gameModal" class="modal hide">
+    <div class="modal-body">
+      <img id="gameModalImg" class="img-rounded">
     </div>
   </div>
 <% else %>

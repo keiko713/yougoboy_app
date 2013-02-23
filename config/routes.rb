@@ -1,13 +1,10 @@
 YougoboyApp::Application.routes.draw do
-  resources :kids
-
-
   root to: 'static_pages#home'
 
-  match '/help',  to: 'static_pages#help'
-  match '/signup', to: 'users#new'
+  match '/help', to: 'static_pages#help'
 
   resources :words
+  resources :kids
 
 
   devise_for :users

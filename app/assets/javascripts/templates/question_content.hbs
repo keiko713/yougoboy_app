@@ -1,0 +1,11 @@
+<div class="question-bar">
+  <audio src="{{audiosrc}}"></audio>
+  <h3>{{question}}&nbsp;<i class="icon-volume-up icon-border speaker"></i></h3>
+</div>
+<div class="row row-player">
+{{#each candidates}}
+  <div class="span-player">
+    <img src="/assets/words/{{this}}.png" class="img-polaroid player-img" data-name="{{this}}">
+  </div>
+{{/each}}
+</div>

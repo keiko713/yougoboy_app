@@ -63,6 +63,10 @@ GEM
       thor (>= 0.14.6)
     guard-minitest (0.5.0)
       guard (>= 0.4)
+    handlebars_assets (0.12.0)
+      execjs (>= 1.2.9)
+      sprockets (>= 2.0.3)
+      tilt
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -162,6 +166,7 @@ DEPENDENCIES
   font-awesome-sass-rails
   guard
   guard-minitest
+  handlebars_assets
   jquery-rails (= 2.2.1)
   minitest
   minitest-matchers
