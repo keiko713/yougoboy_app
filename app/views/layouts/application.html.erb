@@ -11,25 +11,25 @@
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
         <li>
-        <a href="/"><i class="icon-home"></i> Home</a>
+        <a href="/"><i class="icon-home icon-2x"></i></a>
         </li>
         <li>
-        <a href="/help"><i class="icon-question-sign"></i> Help</a>
+        <a href="/help"><i class="icon-question-sign icon-2x"></i></a>
         </li>
         <% if user_signed_in? %>
         <li>
-          <%= link_to('<i class="icon-signout"></i> ログアウト'.html_safe, destroy_user_session_path, method: :delete) %>
+          <%= link_to('<i class="icon-signout icon-2x"></i>'.html_safe, destroy_user_session_path, method: :delete) %>
         </li>
         <% else %>
         <li>
-          <%= link_to('<i class="icon-signin"></i> ログイン'.html_safe, new_user_session_path) %>
+          <%= link_to('<i class="icon-signin icon-2x"></i>'.html_safe, new_user_session_path) %>
         </li>
         <li>
-          <%= link_to('<i class="icon-plus"></i> アカウント作成'.html_safe, new_user_registration_path) %>
+          <%= link_to('<i class="icon-plus-sign icon-2x"></i>'.html_safe, new_user_registration_path) %>
         </li>
         <% end %>
       </ul>
-      <h3 class="muted">You Go Boy!</h3>
+      <a href="/"><h3 class="muted">You Go Boy!</h3></a>
     </div>
     <hr>
     <div class="jumbotron">

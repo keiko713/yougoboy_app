@@ -1,21 +1,32 @@
-<%= link_to root_path do %>
-  <%= image_tag('back_btn.png', class: "pull-left back-btn") %>
+<%= link_to new_user_registration_path do %>
+  <i class="icon-plus-sign icon-4x pull-right right-btn"></i>
 <% end %>
-<h2>ログイン</h2>
+<%= link_to root_path do %>
+  <i class="icon-circle-arrow-left icon-4x pull-left left-btn"></i>
+<% end %>
+<h2>Login - ログイン</h2>
 <hr>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <% if notice or alert %>
     <div class="alert alert-error"><%= notice %><%= alert %></div>
   <% end %>
 
-  <%= f.input :email, input_html: { autofocus: true } %>
-  <%= f.input :password %>
+  <%= f.input :email, wrapper: :prepend, label: false do %>
+    <span class="add-on"><i class="icon-envelope"></i></span>
+    <%= f.input_field :email, placeholder: "Email address", autofocus: true %>
+  <% end %>
+  <%= f.input :password, wrapper: :prepend, label: false do %>
+    <span class="add-on"><i class="icon-key"></i></span>
+    <%= f.input_field :password %>
+  <% end %>
 
   <% if devise_mapping.rememberable? -%>
     <%= f.input :remember_me, as: :boolean %>
   <% end -%>
 
   <div class="form-actions">
-    <%= f.submit "ログイン", class: "btn btn-large btn-success" %>
+    <%= button_tag type: 'submit', class: 'btn btn-large btn-success' do %>
+      <i class="icon-signin"></i>&nbsp;ログイン
+    <% end %>
   </div>
 <% end %>

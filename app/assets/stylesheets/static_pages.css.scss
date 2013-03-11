@@ -21,6 +21,13 @@
     .span-player {
       width: 160px;
       margin-bottom: 20px;
+      .add-player {
+        font-size: 160px;
+        color: #333;
+        &:hover {
+          color: #555;
+        }
+      }
     }
     img {
       opacity: 1;
