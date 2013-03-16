@@ -65,6 +65,7 @@ $('.player-img').click( ()->
       urlPattern = new RegExp("(http|https)://.*")
       imgsrc = if kid.charactor_img.match(urlPattern) then kid.charactor_img else "/assets/#{kid.charactor_img}"
       data = {
+        id: kid.id
         imgsrc: kid.charactor_img
         name: kid.name
       }

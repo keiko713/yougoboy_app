@@ -11,6 +11,7 @@
 @import "static_pages.css.scss";
 @import "words.css.scss";
 @import "devise.css.scss";
+@import "kids.css.scss";
 @import url(http://fonts.googleapis.com/css?family=Galindo);
 
 body {
@@ -57,6 +58,12 @@ a {
   .left-btn {
     margin-top: 2px;
     margin-right: -48px;
+  }
+  img.left-btn {
+    width: 57px;
+    height: 57px;
+    margin-top: 0px;
+    margin-right: -57px;
   }
   .right-btn {
     margin-top: 2px;

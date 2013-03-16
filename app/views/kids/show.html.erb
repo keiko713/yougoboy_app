@@ -1,30 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Family:</b>
-  <%= @kid.family_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @kid.name %>
-</p>
-
-<p>
-  <b>Charactor img:</b>
-  <%= @kid.charactor_img %>
-</p>
-
-<p>
-  <b>Created at:</b>
-  <%= @kid.created_at %>
-</p>
-
-<p>
-  <b>Updated at:</b>
-  <%= @kid.updated_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_kid_path(@kid) %> |
-<%= link_to 'Back', kids_path %>
+<%= link_to edit_kid_path do %>
+  <i class="icon-pencil icon-4x pull-right right-btn"></i>
+<% end %>
+<%= link_to root_path do %>
+  <i class="icon-circle-arrow-left icon-4x pull-left left-btn"></i>
+<% end %>
+<h2>Profile</h2>
+<hr>
+<% if notice %>
+<div class="alert alert-info" id="notice"><%= notice %></div>
+<% end %>
+<div class="row">
+  <div class="span4">
+    <%= image_tag("#{@kid.charactor_img}", class: "img-circle") %>
+  </div>
+  <div>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Family:</strong></td>
+          <td><%= @kid.family.familyname %></td>
+        </tr>
+        <tr>
+          <td><strong>Name:</strong></td>
+          <td><%= @kid.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

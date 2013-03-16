@@ -1,11 +1,10 @@
-require "minitest_helper"
+require 'minitest_helper'
 
 describe Kid do
-  before do
-    @kid = Kid.new
-  end
+  describe 'validations' do
+    subject { Kid.new }
 
-  it "must be valid" do
-    @kid.valid?.must_equal true
+    it { must have_valid(:name).when("1234567890", "1") }
+    it { wont have_valid(:name).when("12345678901", "", nil) }
   end
 end
